@@ -8,7 +8,7 @@
 #include "io_state.h"
 #include "io_storage.h"
 
-#define SYNTH_COUNT 6
+#define SYNTH_COUNT 4
 
 IO_AudioSynth synth[SYNTH_COUNT];
 byte currentSynth = 0;

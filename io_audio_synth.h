@@ -25,10 +25,10 @@ class IO_AudioSynth : public AudioDumb {
 
     bool useAdsr = true;
 
-    float attackMs = 0;
+    float attackMs = 50;
     float decayMs = 50;
-    float sustainLevel = 0;
-    float releaseMs = 0;
+    float sustainLevel = 90;
+    float releaseMs = 50;
 
     float filterFrequency = 1000;
     float filterOctaveControl = 1.0;

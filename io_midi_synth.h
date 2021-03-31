@@ -8,30 +8,34 @@
 #include "io_midi_util.h"
 
 void synthNoteOnHandler(byte channel, byte note, byte velocity) {
-    if (channel == 11) {
-        byte key = getItemKey(note);
-        if (key != 255) {
-            currentSynth = key;
-        } else if (note == 22 || note == 46) {
-            synth[currentSynth].noteOn();
-        } else if (note == 23 || note == 47) {
-            saveSynth(currentSynth);
-        } else if (note == 20) {
-            synth[currentSynth].toggleAdsr();
-        }
-    } else if (channel == 1) {
-        Serial.println("should play note");
-        synth[currentSynth].noteOn(note, velocity);
+    // if (channel == 11) {
+    //     byte key = getItemKey(note);
+    //     if (key != 255) {
+    //         currentSynth = key;
+    //     } else if (note == 22 || note == 46) {
+    //         synth[currentSynth].noteOn();
+    //     } else if (note == 23 || note == 47) {
+    //         saveSynth(currentSynth);
+    //     } else if (note == 20) {
+    //         synth[currentSynth].toggleAdsr();
+    //     }
+    // } else 
+    if (channel == 1) {
+        // Serial.println("should play note");
+        // synth[currentSynth].noteOn(note, velocity);
+        synthNoteOn(note, velocity);
     }
 }
 
 void synthNoteOffHandler(byte channel, byte note, byte velocity) {
-    if (channel == 11) {
-        if (note == 22 || note == 46) {
-            synth[currentSynth].noteOff();
-        }
-    } else if (channel == 1) {
-        synth[currentSynth].noteOff(note);
+    // if (channel == 11) {
+    //     if (note == 22 || note == 46) {
+    //         synth[currentSynth].noteOff();
+    //     }
+    // } else 
+    if (channel == 1) {
+        // synth[currentSynth].noteOff(note);
+        synthNoteOff(note);
     }
 }
 
