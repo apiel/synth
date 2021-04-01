@@ -5,6 +5,7 @@
 #include <Audio.h>
 
 #include "io_audio_synth.h"
+#include "io_audio_synth_modulation.h"
 #include "io_audio_synth_storage.h"
 #include "io_audio_wav.h"
 
@@ -13,6 +14,8 @@ AudioOutputMQS audioOut;
 AudioConnection* patchCordSynth[SYNTH_COUNT];
 AudioMixer4 mixer;
 AudioConnection* patchCordMixer;
+
+// there should be only one lfo, reseted only on synth 0
 
 void initSynth(byte synthPos) {
     synth[synthPos].init();

@@ -18,7 +18,7 @@ class IO_AudioSynthModulation : public AudioDumb {
     AudioEffectEnvelope envMod;
     AudioSynthWaveform lfoMod;
 
-    byte currentModulation = 0;
+    byte currentModulation = 1;
     float modAttackMs = 100.0;
     float modDecayMs = 50.0;
     float modSustainLevel = 0.7;
